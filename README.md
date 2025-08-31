@@ -103,7 +103,14 @@ Creating an EC2 instance t2.large with Ubuntu 24 AMI, t2.large, and 30 GB storag
 Script 1 for Terraform,kubectl,Aws cli
 
 vi script1.sh
+## Setup Script
 
+You can run this script by downloading [script1.sh](./script1.sh)
+
+<details>
+<summary>Click to view script content</summary>
+
+```bash
 #!/bin/bash
 #install terraform
 sudo apt install wget -y
