@@ -53,7 +53,7 @@
 - Finally, if you use v3 of TMDB API, create a file named `.env`, and copy and paste the content of `.env.example`.
   And then paste the API Key you just created.
 
-##🚀 Tech Stack
+## 🚀 Tech Stack
 - **GitHub** → Source Code Management  
 - **Jenkins** → Continuous Integration (CI)  
 - **Docker** → Containerization  
@@ -64,4 +64,32 @@
 - **Kubernetes (EKS)** → Container Orchestration  
 - **Prometheus + Grafana** → Monitoring & Visualization  
 
-docker run --name netflix-clone-website --rm -d -p
+Steps:-
+
+Step 1 — Launch an Ubuntu(22/24.04) T2 Large Instance with 30GB, create IAM role and attach admin permissions
+
+Step 2 — Install Jenkins, Docker and Trivy. Create a Sonarqube Container using Docker.
+
+Step 3 — Create a TMDB API Key.
+
+Step 4 — Install Prometheus and Grafana On the new Server.
+
+Step 5 — Install the Prometheus Plugin and Integrate it with the Prometheus server.
+
+Step 6 — Email Integration With Jenkins and Plugin setup.
+
+Step 7 — Install Plugins like JDK, Sonarqube Scanner, Nodejs, and OWASP Dependency Check.
+
+Step 8 — Create a Pipeline Project in Jenkins using a Declarative Pipeline
+
+Step 9 — Install OWASP Dependency Check Plugins
+
+Step 10 — Docker Image Build and Push
+
+Step 11 — Deploy the image using Docker
+
+Step 12 — Setup AWS EKS with Terraform
+
+Step 13 — Access the Netflix app on the Browser.
+
+Step 14 — Terminate the AWS EC2 Instances.
