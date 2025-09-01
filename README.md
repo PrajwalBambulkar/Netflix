@@ -218,7 +218,7 @@ pipeline{
     stages {
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/ReyazShaik/devsecops-netflix.git'
+                git branch: 'main', url: 'https://github.com/PrajwalBambulkar/Netflix.git'
             }
         }
         stage('Terraform version'){
@@ -625,7 +625,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/ReyazShaik/devsecops-netflix.git'
+                git branch: 'main', url: 'https://github.com/PrajwalBambulkar/Netflix.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -696,7 +696,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/ReyazShaik/devsecops-netflix.git'
+                git branch: 'main', url: 'https://github.com/PrajwalBambulkar/Netflix.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -814,7 +814,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/prajwalbambulkar/devsecops-netflix.git'
+                git branch: 'main', url: 'https://github.com/PrajwalBambulkar/Netflix.git'
             }
         }
         stage("Sonarqube Analysis "){
