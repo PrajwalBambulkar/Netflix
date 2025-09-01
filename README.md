@@ -1,4 +1,4 @@
-<div align="center">
+  <div align="center">
   <a href="http://netflix-clone-with-tmdb-using-react-mui.vercel.app/">
     <img src="./public/assets/netflix-logo.png" alt="Logo" width="100" height="32">
   </a>
@@ -206,11 +206,12 @@ Now create a new pipeline job for the Eks provision
 
 New Item --> Pipeline --> EKSJOB 
 
-This project is parameterized
-Name: action
-choices: 
- apply
- destroy
+This project is parameterized  
+Name: action  
+choices:  
+- apply  
+- destroy  
+
 
 pipeline{
     agent any
