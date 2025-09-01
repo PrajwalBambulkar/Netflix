@@ -385,7 +385,7 @@ ExecStart=/usr/local/bin/node_exporter \
 WantedBy=multi-user.target
 ```
 ---------------------------------------------
-
+```bash
 sudo systemctl enable node_exporter
 
 sudo systemctl start node_exporter
@@ -393,14 +393,14 @@ sudo systemctl start node_exporter
 sudo systemctl status node_exporter
 
 journalctl -u node_exporter -f --no-pager  [for any errors]
-
+```
 
 sudo vi /etc/prometheus/prometheus.yml  
-
+```bash
 - job_name: node_export
     static_configs:
       - targets: ["localhost:9100"]
-
+```
 promtool check config /etc/prometheus/prometheus.yml     [check if the config is valid.]
 
 curl -X POST http://localhost:9090/-/reload          [POST request to reload the config.]
@@ -413,7 +413,7 @@ Install Grafana
 ================
 
 vi Grafana.sh
-
+```bash
 sudo apt-get install -y apt-transport-https software-properties-common
 wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
@@ -423,7 +423,7 @@ sudo systemctl enable grafana-server
 sudo systemctl start grafana-server
 sudo systemctl status grafana-server
 
-
+```
 
 http://13.233.215.35:9100 --> node exporter is working
 http://13.233.215.35:9090 --> Promo is working
