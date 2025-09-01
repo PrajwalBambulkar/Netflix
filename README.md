@@ -187,7 +187,7 @@ sudo apt-get install trivy -y
 Job 1: EKS Provision
 -----------------------
 
-Create a S3 private bucket for statefile : devsecops-netflix-reyaz
+Create a S3 private bucket for statefile : neetflix
 
 Install terraform plugin
 
