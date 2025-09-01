@@ -350,23 +350,23 @@ sudo systemctl status prometheus
 
 journalctl -u prometheus -f --no-pager   [to check logs]
 
-http://ip:9090
+
 
 Install Node Exporter
 =====================
 
 vi nodeexp.sh
-
+```bash
 sudo useradd --system --no-create-home --shell /bin/false node_exporter
 wget https://github.com/prometheus/node_exporter/releases/download/v1.6.1/node_exporter-1.6.1.linux-amd64.tar.gz
 tar -xvf node_exporter-1.6.1.linux-amd64.tar.gz
 sudo mv node_exporter-1.6.1.linux-amd64/node_exporter /usr/local/bin/
 rm -rf node_exporter*
 node_exporter --version
-
+```
 
 sudo vi /etc/systemd/system/node_exporter.service
-
+```bash
 [Unit]
 Description=Node Exporter
 Wants=network-online.target
@@ -383,7 +383,7 @@ ExecStart=/usr/local/bin/node_exporter \
     --collector.logind
 [Install]
 WantedBy=multi-user.target
-
+```
 ---------------------------------------------
 
 sudo systemctl enable node_exporter
