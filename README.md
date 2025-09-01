@@ -425,10 +425,20 @@ sudo systemctl status grafana-server
 
 ```
 
-http://13.233.215.35:9100 --> node exporter is working
-http://13.233.215.35:9090 --> Promo is working
+http://IP:9100 --> node exporter is working
+http://IP:9090 --> Promo is working
 
-http://Ip:3000 --> Grafana, username: admin, password: admin
+http://Ip:3000 --> Grafana, username: admin, password: admin](http://13.233.215.35:9100  
+--> Node Exporter is working  
+
+http://13.233.215.35:9090  
+--> Prometheus is working  
+
+http://<IP>:3000  
+--> Grafana  
+   Username: admin  
+   Password: admin  
+)
 
 
 To visualize metrics, you need to add a data source first.
