@@ -607,7 +607,7 @@ Secret = empty
 ```
 Create a Pipeline 
 ===================
-
+```bash
 pipeline{
     agent any
     tools{
@@ -661,14 +661,14 @@ pipeline{
         }
     }
 }
-
+```
 Step 10 — Docker Image Build and Push
 ======================================
-
+```bash
 Goto Jenkins Dashboard → Manage Jenkins → Credentials
 Kind = Username and Password
 Scope = Global
-username = trainerreyaz
+username = prajwalbambulkar
 password =
 ID = docker
 Desc = docker
@@ -729,20 +729,20 @@ pipeline{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
                        sh "docker build --build-arg TMDB_V3_API_KEY=cacc35c61cd76805987aca08d540f24e -t netflix ."
-                       sh "docker tag netflix trainerreyaz/netflix:latest "
-                       sh "docker push trainerreyaz/netflix:latest "
+                       sh "docker tag netflix prajwalbambulkar/netflix:latest "
+                       sh "docker push prajwalbambulkar/netflix:latest "
                     }
                 }
             }
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image trainerreyaz/netflix:latest > trivyimage.txt"
+                sh "trivy image prajwalbambulkar/netflix:latest > trivyimage.txt"
             }
         }
        stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name netflix -p 8081:80 trainerreyaz/netflix:latest'
+                sh 'docker run -d --name netflix -p 8081:80 prajwalbambulkar/netflix:latest'
             }
         }
     }
@@ -753,20 +753,20 @@ pipeline{
             body: "Project: ${env.JOB_NAME}<br/>" +
                 "Build Number: ${env.BUILD_NUMBER}<br/>" +
                 "URL: ${env.BUILD_URL}<br/>",
-            to: 'trainerreyaz@gmail.com',
+            to: 'prajwalbambulkar@gmail.com',
             attachmentsPattern: 'trivyfs.txt,trivyimage.txt'
         }
     }
 }
+```
 
-http://jenkinsip:8081
 
 Step 11 — Kuberenetes Setup 
 ===========================
 
 Let’s Update the kubeconfig
 ============================
-
+```bash
 Go to Jenkins instance and enter the below command
 
 aws eks update-kubeconfig --name EKS_CLUSTER --region ap-south-1
@@ -777,7 +777,7 @@ copy the entire content and save it as secret.txt in local machine
 
 kubectl get nodes
 
-Install Kubernetes Plugin
+Install Kubernetes Plugin in Jenkins
 ----------------------
 
 Kubernetes Credentials
@@ -814,7 +814,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/ReyazShaik/devsecops-netflix.git'
+                git branch: 'main', url: 'https://github.com/prajwalbambulkar/devsecops-netflix.git'
             }
         }
         stage("Sonarqube Analysis "){
@@ -847,20 +847,20 @@ pipeline{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
                        sh "docker build --build-arg TMDB_V3_API_KEY=cacc35c61cd76805987aca08d540f24e -t netflix ."
-                       sh "docker tag netflix trainerreyaz/netflix:latest "
-                       sh "docker push trainerreyaz/netflix:latest "
+                       sh "docker tag netflix prajwalbambulkar/netflix:latest "
+                       sh "docker push prajwalbambulkar/netflix:latest "
                     }
                 }
             }
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image trainerreyaz/netflix:latest > trivyimage.txt"
+                sh "trivy image prajwalbambulkar/netflix:latest > trivyimage.txt"
             }
         }
        stage('Deploy to container'){
             steps{
-                sh 'docker run -d --name netflix -p 3001:80 trainerreyaz/netflix:latest'
+                sh 'docker run -d --name netflix -p 3001:80 prajwalbambulkar/netflix:latest'
             }
         }
        stage('Deploy to kubernetes'){
@@ -892,4 +892,4 @@ and rerun the pipeline
 
 kubectl get all
 kubectl get svc #use anyone
-
+```
