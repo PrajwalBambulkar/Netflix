@@ -100,13 +100,12 @@ Step 1: Setting up AWS EC2 Instance
 Creating an EC2 instance t2.large with Ubuntu 24 AMI, t2.large, and 30 GB storage
 
 
-Script 1 for Terraform,kubectl,Aws cli
+
 
 vi script1.sh
 ## Setup Script
 
-You can run this script by downloading [script1.sh](./script1.sh)
-- Install **kubectl**
+- Install **Terraform,kubectl,Aws cli**
 
 
 ```bash
