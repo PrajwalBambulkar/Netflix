@@ -65,7 +65,7 @@
 - **Prometheus + Grafana** → Monitoring & Visualization  
 
 ## Steps:-
-
+```bash
 Step 1 — Launch an Ubuntu(22/24.04) T2 Large Instance with 30GB, create IAM role and attach admin permissions
 
 Step 2 — Install Jenkins, Docker and Trivy. Create a Sonarqube Container using Docker.
@@ -93,7 +93,7 @@ Step 12 — Setup AWS EKS with Terraform
 Step 13 — Access the Netflix app on the Browser.
 
 Step 14 — Terminate the AWS EC2 Instances.
-
+```
 ## 📝 Steps to Deploy
 Step 1: Setting up AWS EC2 Instance
 ----------------------------------
@@ -186,7 +186,7 @@ sudo apt-get install trivy -y
 
 Job 1: EKS Provision
 -----------------------
-
+```bash
 Create a S3 private bucket for statefile : neetflix
 
 Install terraform plugin
@@ -200,7 +200,7 @@ which terraform
 Now --> Manage Jenkins –> Tools
 
 Terraform --> Name: terraform, uncheck install automatically , install directory = /usr/bin/
-
+```
 Now create a new pipeline job for the Eks provision
 ------------------------------------------
 
