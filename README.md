@@ -539,7 +539,7 @@ failure-any
 
 Step 7 — Install Plugins like JDK, Sonarqube Scanner, NodeJs, OWASP Dependency Check
 ===================================================================================
-
+```bash
 Install Plugin
 Goto Manage Jenkins →Plugins → Available Plugins →
 
@@ -571,11 +571,11 @@ NodeJS installations --> Add NodeJS --> install automatically --> install from n
 
 Docker installations --> Name = docker --> install automatically --> Add installer --> select docker.com --> latest
 
-
+```
 
 Configure Sonar Server in Manage Jenkins
 ==========================================
-
+```bash
 Go to your Sonarqube Server. http://ip:9000
 
 Click on Administration → Security → Users → Click on Tokens and Update Token → Give it a name netflix → and click on Generate Token
@@ -588,10 +588,10 @@ Scope = Global
 Secret = Paste the sonar key you copied
 ID = sonar-token
 Desc = sonar-token
-
+```
 Adding sonar server details in Jenkins
 ---------------------------------
-
+```bash
 Now, go to Dashboard → Manage Jenkins → System --> SonarQube servers
 Name = sonar-server
 Server URL = http://35.154.52.225:9000
@@ -604,7 +604,7 @@ Administration–> Configuration–>Webhooks --> create
 Name = Jenkins
 URL = http://35.154.52.225:8080/sonarqube-webhook/
 Secret = empty
-
+```
 Create a Pipeline 
 ===================
 
