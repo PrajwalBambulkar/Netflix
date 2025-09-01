@@ -107,8 +107,8 @@ vi script1.sh
 
 You can run this script by downloading [script1.sh](./script1.sh)
 
-
-<summary>Click to view script content</summary>
+<details>
+  <summary>Click to view script content</summary>
 
 ```bash
 #!/bin/bash
