@@ -106,9 +106,8 @@ vi script1.sh
 ## Setup Script
 
 You can run this script by downloading [script1.sh](./script1.sh)
+- Install **kubectl**
 
-<details>
-  <summary>Click to view script content</summary>
 
 ```bash
 #!/bin/bash
@@ -130,9 +129,8 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 sudo apt-get install unzip -y
 unzip awscliv2.zip
 sudo ./aws/install
-</details> ```
-```bash
 
+```
 =======================================================
 
 
