@@ -425,7 +425,7 @@ sudo systemctl status grafana-server
 
 ```
 
-http://IP:9100 --> node exporter is working
+[http://IP:9100 --> node exporter is working
 http://IP:9090 --> Promo is working
 
 http://Ip:3000 --> Grafana, username: admin, password: admin](http://13.233.215.35:9100  
