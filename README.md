@@ -428,10 +428,10 @@ sudo systemctl status grafana-server
 [http://IP:9100 --> node exporter is working
 http://IP:9090 --> Promo is working
 
-http://Ip:3000 --> Grafana, username: admin, password: admin](http://13.233.215.35:9100  
+http://Ip:3000 --> Grafana, username: admin, password: admin]http://IP:9100  
 --> Node Exporter is working  
 
-http://13.233.215.35:9090  
+http://IP:9090  
 --> Prometheus is working  
 
 http://<IP>:3000  
@@ -440,13 +440,13 @@ http://<IP>:3000
    Password: admin  
 )
 
-
+```bash
 To visualize metrics, you need to add a data source first.
 
 Click Add data source and select Prometheus--> URL : http://localhost:9090  (as we have in same server)
 
 Let’s add Dashboard --> top right corner --> + --> import Dashboard paste this code 1860 and  --> promotheus --> click on load
-
+```
 
 Step 5 — Install the Prometheus Plugin and Integrate it with the Prometheus server
 ===================================================================================
@@ -456,14 +456,14 @@ Goto Manage Jenkins –> Plugins –> Available Plugins --> Prometheus and insta
 To create a static target, you need to add job_name with static_configs 
 
 Go to Prometheus server
-
+```bash
 sudo vi /etc/prometheus/prometheus.yml
 
   - job_name: 'jenkins'
     metrics_path: '/prometheus'
     static_configs:
       - targets: ['<jenkins-ip>:8080']
-
+```
 
 promtool check config /etc/prometheus/prometheus.yml
 
@@ -482,7 +482,7 @@ Click On Dashboard –> + symbol –> Import Dashboard --> Use Id 9964 and click
 
 Step 6 — Email Integration With Jenkins and Plugin Setup
 ===========================================================
-
+```bash
 Install Email Extension Plugin in Jenkins
 
 Go to your Gmail and click on your profile
@@ -504,7 +504,7 @@ E-mail Notification
 
 SMTP Server ---> smtp.gmail.com
 Advanced --> Use SMTP authentication
-Username = trainerreyaz@gmail.com
+Username = prajwalbambulkar@gmail.com
 password = guyyqkpaqhknshpk (the generated password not your gmail pwd)
 use ssl
 SMTP port = 465
@@ -514,7 +514,7 @@ Test
 
 Click on Manage Jenkins–> credentials and add your mail username and generated password
 Kind = username and pwd
-username = trainerreyaz@gmail.com
+username = prajwalbambulkar@gmail.com
 pwd= guyyqkpaqhknshpk (generated pwd)
 ID = mail
 Desc = mail
@@ -535,7 +535,7 @@ Default triggers
 always
 failure-any
 
-
+```
 
 Step 7 — Install Plugins like JDK, Sonarqube Scanner, NodeJs, OWASP Dependency Check
 ===================================================================================
