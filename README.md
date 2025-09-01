@@ -259,7 +259,7 @@ pipeline{
 ```
 Run the above Pipeline in jenkins.
 
-Run this command in Linux Machine
+-Run this command in Linux Machine
 aws eks list-clusters --region ap-south-1
 
 aws eks update-kubeconfig --region ap-south-1 --name EKS_CLUSTER
