@@ -141,6 +141,7 @@ Script2 for Java,Jenkins,Docker
 
 vi script2.sh
 
+```bash
 #!/bin/bash
 sudo apt update -y
 wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | tee /etc/apt/keyrings/adoptium.asc
@@ -170,10 +171,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 sudo usermod -aG docker ubuntu
 newgrp docker
-
-===========================================
-
-http://ip:8080
+```
 
 vi trivy.sh
 
