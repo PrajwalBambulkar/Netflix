@@ -212,7 +212,7 @@ choices:
 - apply  
 - destroy  
 
-
+```bash
 pipeline{
     agent any
     stages {
@@ -256,9 +256,10 @@ pipeline{
         }
     }
 }
+```
+Run the above Pipeline in jenkins.
 
-Run the Pipeline
-
+Run this command in Linux Machine
 aws eks list-clusters --region ap-south-1
 
 aws eks update-kubeconfig --region ap-south-1 --name EKS_CLUSTER
@@ -266,14 +267,14 @@ aws eks update-kubeconfig --region ap-south-1 --name EKS_CLUSTER
 
 Now Run sonarqube container
 =============================
-
+```bash
 sudo chmod 777 /var/run/docker.sock
 systemctl daemon-reload
 systemctl restart docker.service
 
 docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
+```
 
-http://IP:9000
 
 
 
@@ -297,10 +298,8 @@ Launch a new Ubuntu 24 t2.medium for Promo and Grafana
 Install Promotheus
 =================
 
-lets create a new user called system only for Grafana 
-
 vi promo.sh
-
+```bash
 sudo apt update
 sudo useradd --system --no-create-home --shell /bin/false prometheus
 wget https://github.com/prometheus/prometheus/releases/download/v2.47.1/prometheus-2.47.1.linux-amd64.tar.gz
@@ -314,9 +313,9 @@ sudo chown -R prometheus:prometheus /etc/prometheus/ /data/
 cd
 rm -rf prometheus-2.47.1.linux-amd64.tar.gz
 prometheus --version
-
+```
 ---------------------------------------------------------
-
+```bash
 sudo vi /etc/systemd/system/prometheus.service
 
 [Unit]
@@ -340,7 +339,7 @@ ExecStart=/usr/local/bin/prometheus \
   --web.enable-lifecycle
 [Install]
 WantedBy=multi-user.target
-
+```
 ---------------------------------
 
 sudo systemctl enable prometheus
